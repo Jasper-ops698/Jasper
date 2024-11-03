@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { db } from 'api/database.js';
+import { db } from 'api/databse.js';
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
