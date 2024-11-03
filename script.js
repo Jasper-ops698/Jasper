@@ -177,4 +177,42 @@ const cart = [];
         });
     });
 
-    
+    document.getElementById('signupForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+
+        const response = await fetch('/api/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        alert(result.message);
+        if (result.token) localStorage.setItem('authToken', result.token);
+    });
+
+    const authToken = localStorage.getItem('authToken');
+    if (!authToken) {
+        window.location.href = '/login';
+    }
+
+
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+
+        const response = await fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        alert(result.message);
+        if (result.token) localStorage.setItem('authToken', result.token);
+    });
+
+   
