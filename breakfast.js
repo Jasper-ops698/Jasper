@@ -1,25 +1,25 @@
 const product = [
     {
         id: 0,
-        image: 'pics/chapati.jpeg',
+        image: 'chapati.jpeg',
         title: 'Chapati Plain',
         price: 15,
     },
     {
         id: 1,
-        image: 'pics/chipoo.jpeg',
+        image: 'chipoo.jpeg',
         title: 'Chips Plain',
         price: 80,
     },
     {
         id: 2,
-        image: 'pics/hotdogs.jpeg',
+        image: 'hotdogs.jpeg',
         title: 'Hotdogs',
         price: 60,
     },
     {
         id: 3,
-        image: 'pics/chapatistew.jpeg',
+        image: 'chapati stew.jpeg',
         title: 'Chapati-Stew',
         price: 80,
     }
