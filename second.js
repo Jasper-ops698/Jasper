@@ -19,7 +19,7 @@ const product = [
     },
     {
         id: 3,
-        image: 'chapatistew.jpeg',
+        image: 'chapati stew.jpeg',
         title: 'Chapati-Stew',
         price: 80,
     }
