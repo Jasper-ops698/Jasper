@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c9de7bbdc9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="addtocart.css">
+
+
+</head>
+<body>
+    <div class="header">
+        <p class="logo">COKO Breakfast</p>
+        <div class="cart"><i class="fa-solid fa-cart-shopping"></i><p id="count">0</p></div>
+    </div>
+    <div class="container">
+        <div id="root"></div>
+        <div class="sidebar">
+            <div class="head"><p>My Cart</p></div>
+            <div id="cartItem">Your Cart is Empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">Ksh 0.00</h2>
+            </div>
+            <!-- Button to initiate purchase -->
+
+<a href="index.html" class="button">Continue Shopping</a>
+<button class="btn btn-primary" id="pay-button">Proceed to Payment</button>
+
+<!-- Display Cart Items -->
+<div id="cartItems"></div>
+        </div>
+    </div>
+    <script src="sales.js/breakfast.js"></script>
+</body>
+</html>
