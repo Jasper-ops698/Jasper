@@ -4,10 +4,10 @@ import { db } from 'databse.js';
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        const { email, password } = req.body;
+        const { username, password } = req.body;
 
         // Check if user exists
-        const user = await db.collection('users').findOne({ email });
+        const user = await db.collection('users').findOne({ username });
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
         }
 
         // Generate JWT
-        const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ username: user.username }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
         res.status(200).json({ message: 'Login successful', token });
     } else {
