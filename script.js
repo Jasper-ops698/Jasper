@@ -84,19 +84,32 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 });
 // Login function
 function login() {
+    const loginForm = document.getElementById("loginForm");
+    const message = document.getElementById("message");
+
+    //check if the user is already logged in(data already exists in local storage)
+    if (localStorage.getItem("username") && localStorage.getItem("passwaord")) {
+        message.textContent = `Welcome back, ${localStorage.getItem("username")}!`;
+    } else {
+        message.textContent = "Please log in.";
+    }
+
+    //Handle form submission
+    loginForm.onsubmit = function(event) {
+        event.preventDefault();
+
+    // Get Input values
     const username = document.getElementById("loginUsername").value;
     const password = document.getElementById("loginPassword").value;
 
-    // Retrieve stored signup info
-    const storedUsername = localStorage.getItem("username");
-    const storedPassword = localStorage.getItem("password");
+    // Store login data in localStorage
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
 
-    // Validate login credentials
-    if (username === storedUsername && password === storedPassword) {
-        alert("Login successful!");
-    } else {
-        alert("Invalid username or password.");
-    }
+    // Show a success message
+    message.textContent = `Welcome, ${username}! You are now logged in.`;
+    };
+    
 }
 // Function to open the order modal
 function openOrderModal() {
