@@ -338,25 +338,20 @@ button[type="submit"]:hover {
 }
 
 .btnn {
-    width: 160px;
+    width: 240px;
     height: 40px;
     background: rgb(250, 7, 7);
     border: none;
-    margin-bottom: 10px;
-    margin-left: 20px;
+    margin-top: 30px;
     font-size: 18px;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.4s ease;
 }
 
-.btnn a{
-    text-decoration: none;
-    color: black;
-    transition: 0.3s ease;
-
 .btnn:hover {
-   background-color: black;
+   background-color: white;
+   color: #ff7200;  
 }
 
 .btnn a{
