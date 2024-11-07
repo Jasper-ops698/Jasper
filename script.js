@@ -84,7 +84,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 });
 // Login function
 function login() {
-    const loginForm = document.getElementById("loginForm");
+    const loginForm = document.getElementByClassName("form");
     const message = document.getElementById("message");
 
     //check if the user is already logged in(data already exists in local storage)
