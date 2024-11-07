@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { db } from 'databse.js';
+import { db } from 'databse';
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     }
 }
 // pages/api/example.js
-import clientPromise from 'databse.js';
+import clientPromise from 'databse';
 
 export default async function handler(req, res) {
     const client = await clientPromise;
