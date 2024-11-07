@@ -88,7 +88,7 @@ function login() {
     const message = document.getElementById("message");
 
     //check if the user is already logged in(data already exists in local storage)
-    if (localStorage.getItem("username") && localStorage.getItem("passwaord")) {
+    if (localStorage.getItem("username") && localStorage.getItem("password")) {
         message.textContent = `Welcome back, ${localStorage.getItem("username")}!`;
     } else {
         message.textContent = "Please log in.";
@@ -156,19 +156,26 @@ document.getElementById("orderForm").addEventListener("submit", function(event) 
 
     // Create order object
     const order = {
-        customerName,
-        customerPhone,
-        product,
-        address
+        items: cartItems;
+        total: OrderTotal;
     };
 
-    // Store the order in localStorage for demo purposes
+    // Store the order in localStorage
     localStorage.setItem("order", JSON.stringify(order));
 
     // Alert and reset the form
     alert("Order placed successfully!");
     document.getElementById("orderForm").reset();
     closeOrderModal();
+
+     // Store customer details
+    const customerInfo = {
+        name: 'text';
+        phone: '123-456-7890';
+    };
+
+    // Store the customerInfo in localStorage
+    localStorage.setItem('customerInfo', JSON.stringify(customerInfo));
 });
 
 const cart = [];
@@ -195,7 +202,7 @@ const cart = [];
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
 
-        const response = await fetch('/api/signup', {
+        const response = await fetch('signup.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
@@ -217,7 +224,7 @@ const cart = [];
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
 
-        const response = await fetch('/api/login', {
+        const response = await fetch('login.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
