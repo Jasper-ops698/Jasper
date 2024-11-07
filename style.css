@@ -334,10 +334,10 @@ button[type="submit"]:hover {
 
 ::placeholder{
     color: whitesmoke;
-    font-family: Times, serif;
+    font-family: Times;
 }
 
-.content .btnn {
+.btnn {
     width: 160px;
     height: 40px;
     background: rgb(250, 7, 7);
@@ -350,7 +350,7 @@ button[type="submit"]:hover {
     transition: 0.4s ease;
 }
 
-.content .btnn a{
+.btnn a{
     text-decoration: none;
     color: black;
     transition: 0.3s ease;
